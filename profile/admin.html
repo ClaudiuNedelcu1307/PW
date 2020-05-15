@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Profile Page </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="../css/menuu.css">
+    <link rel="stylesheet" href="../css/music-style.css">
+    <link rel="stylesheet" href="../css/modal-style.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <link rel="stylesheet" href="../css/slide-nav.css">
+    <script src="../js/menu.js"></script>
+    <script src="../js/heatHarta.js"></script>
+    <script src="../js/xy.js"></script>
+    <script src="../js/profile.js"></script>
+    <script src="../js/details_item.js"></script>
+    <link rel="stylesheet" href="../css/style-home.css">
+    <link rel="stylesheet" href="../css/market-modal.css">
+    <link rel="stylesheet" href="../css/item_detail.css">
+
+    <link rel="stylesheet" href="../css/background.css">
+    <link rel="stylesheet" href="../css/upload.css">
+    
+
+</head>
+    <body onload="load_data()">
+        <div id="meniu" >
+            <ul id="navbar-ul">
+                <li><a href="../index.php"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="../adminPage.html">Administration</a></li>
+                <li><a href="../contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+                
+                <li class="dropdown">
+                    <a href="../market.html" class="dropbtn">Market</a>
+                    <div class="dropdown-content">
+                        <a href="../music.html" name="xNameCheck" class="xyCheck">Music</a>
+                        <a href="../instruments.html">Instruments</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="item-navbar-min" style="background-image:url(../images/profile.jpg); background-attachment: fixed;">
+            <div class="container"> 
+                <div class="row"> 
+                    <div class="col-md-7 col-sm-7">
+                    </div>
+                    <div class="col-md-2 col-sm-2">
+                        <h1 class="text-center">Welcome, <br>admin</h1>
+                    </div>
+                    <div class="col-md-3">
+                        <img id="profilePicture" class="img-profile" src="admin/admin_profile.jpg" onclick="document.getElementById('id01').style.display='block'" alt="profile" style="width:150px">
+
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+
+        <div id="id01" class="modalLogin">
+            <div class="modalLogin-content animate">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="admin/admin_profile.jpg" alt="Avatar" class="avatarLogin">
+              </div>
+              <div class="containerLogin">
+                <label for="file"><b>Change profile picture:</b></label>
+                <input id="file" type="file" name="file"><br><br>
+
+                <button id="confirmChange" onclick="changePicture()">Apply Change</button>
+              </div>
+          
+              
+          </div>
+          </div>
+
+          <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <section style="background-color: #fafafa;">
+                <div class="container benefits-container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6">
+                            <h3 id="div_edit">Edit your profile page</h3>
+                        </div>    
+                    </div>
+                </div>
+            </section>
+
+
+        <section class="section-gray" style="background-image:url(../images/back_profile.jpg); background-attachment: fixed;">
+            <div class="row">
+                <div class="container spacing">
+                    <div class="col-md-6">
+                        <div class="vertical-menu">
+                            <a id="a_basic" onclick="click_basic()" class="activeTab">Basic Info</a>
+                            <a id="a_details" onclick="click_details()">Details</a>
+                            <a id="a_pass" onclick="click_pass()">Password</a>
+
+                        </div>
+                    </div>
+                    <div id="Basic_Info" class="colorForm">
+                        <h3>Basic Info</h3>
+                        <div class="col-md-3">
+                            <div class="containerLogin">
+                                <label class="requiredStar" for="first_Profile"><b>First Name</b></label><br>
+                                <input class="colorInput" id="first_Profile" type="text" placeholder="Enter First Name" name="first_Profile"><br><br>
+                            
+                                <label class="requiredStar" for="last_Profile"><b>Last Name</b></label><br>
+                                <input class="colorInput" id="last_Profile" type="text" placeholder="Enter Last Name" name="last_Profile"><br><br>
+
+                                <label class="requiredStar" for="mail_Profile"><b>Email</b></label><br>
+                                <input class="colorInput" id="mail_Profile" type="email" placeholder="Enter Email" name="mail_Profile"><br><br>
+                        
+                            </div>
+            
+                        </div>
+                        <div class="col-md-3">
+                            <div class="containerLogin">
+                                <label for="born_Profile"><b>Birthday</b></label><br>
+                                <input class="colorInput" id="born_Profile" type="date" name="born_Profile"><br><br>
+                            
+                                <label class="city" for="city_Profile"><b>City</b></label><br>
+                                <input class="colorInput" id="city_Profile" type="text" placeholder="Enter Last Name" name="city_Profile"><br><br>
+
+                                <label  for="fb_Profile"><b>Facebook Username</b></label><br>
+                                <input class="colorInput" id="fb_Profile" type="text" placeholder="Facebook User Name" name="fb_Profile"><br><br>
+                                    
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Details" class="colorForm">
+                        <h3>Details</h3>
+                        <div class="col-md-6">
+                            <div class="containerLogin">
+                                <div class="form-group">
+                                    <label for="detail_block_Profile"><b>Write something about yourself</b></label><br>
+                                    <textarea class="colorInput" id="detail_block_Profile" name="detail_block_Profile" cols="40" rows="5" aria-invalid="false" placeholder="Your Bio"></textarea>
+                                </div>
+
+                                <label for="tel1_Profile"><b>Telephone 1</b></label><br>
+                                <input class="colorInput" id="tel1_Profile" type="text" placeholder="Enter Phone Number" name="tel1_Profile"><br><br>
+
+                                <label for="tel2_Profile"><b>Telephone 2</b></label><br>
+                                <input class="colorInput" id="tel2_Profile" type="text" placeholder="Enter Phone Number" name="tel2_Profile"><br><br>
+                        
+                            </div>
+            
+                        </div>
+                    </div>
+
+                    <div id="Pass_Change" class="colorForm">
+                        <h3>Change Password</h3>
+                        <div class="col-md-6">
+                            <div class="containerLogin">
+
+                                <label for="upass_edit"><b>New Password</b></label><br>
+                                <input id="upass_edit" class="colorInput" type="password" name="pass1"><br><br>
+
+                                <label for="urepass_edit"><b>Repeat Password</b></label><br>
+                                <input id="urepass_edit" class="colorInput" type="password" name="pass2"><br><br>
+                        
+                            </div>
+            
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4 text-align-center"><button id="applyChanges" onclick="send_data()">Apply Changes</button></div>
+                <div class="col-md-4"></div>
+            </div>
+        </section>
+        <section>
+            <div id="search_rez" class="container benefits-container">
+                Nothing to show
+            </div>
+        </section>
+
+        <footer>
+        <div class="foot-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 text-left">
+                        <table style="margin-left: 10px;">
+                            <tbody><tr>
+                                <td>
+                                    <a href="../banner.html" class="m-20 f-w-bold">Banner Exchange</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="licensee-terms-and-conditions.html" class="m-20 f-w-bold">Terms for Music Buyers</a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <div class="col-md-3 text-left">
+                        <table>
+                            <tbody><tr>
+                                <td>
+                                    <a href="about-us.html" class="m-20 f-w-bold">About Us</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 11px 0;">
+                                    <a href="https://www.facebook.com/Muzicity.co.uk" target="_blank" class="m-20" style="text-decoration: none;">
+                                        <img title="Facebook Page" src="../img/Facebook_button.jpg" alt="Facebook_button" class="img-responsive img-center">
+                                    </a>
+    
+                                    <a href="https://twitter.com/Muzicity1" target="_blank" class="m-20" style="text-decoration: none;">
+                                        <img title="Twitter Page" src="../img/twitter_button.jpg" alt="twitter_button" class="img-responsive img-center">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="../contact.html" class="m-20 f-w-bold">Contact Us</a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+        
+    </body>
+    
+</html>

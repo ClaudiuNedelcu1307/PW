@@ -1,0 +1,46 @@
+ul.lista-tabelara {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 15px;
+    margin-bottom: 0px;
+}
+
+ul.lista-tabelara li {
+    font-weight: normal;
+    color: #727272;
+    line-height: 29px;
+    font-size: 16px;
+    height: 30px;
+    text-align: left;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+ul.lista-tabelara li span {
+    white-space: nowrap;
+    color: black;
+    font-weight: bold;
+}
+
+h2.titlu-box.special-caracteristici {
+    margin-bottom: 7px;
+}
+
+.margin-boxes {
+    margin-bottom: 40px;
+}
+
+.btn-delete {
+    margin-left: 20px; 
+    background-color: red;
+}
+
+.btn-delete:hover {
+    background-color: darkred;
+}
+
+.img-detail {
+    border: 1px solid #ddd;
+    padding: 5px;
+    width: 350px;
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Music Garage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="css/menuu.css">
+    <link rel="stylesheet" href="css/button-style.css">
+    <script src="js/menu.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/heatHarta.js"></script>
+    <script src="js/xy.js"></script>
+    <link rel="stylesheet" href="css/style-home.css">
+    <link rel="stylesheet" href="css/modal-style.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/upload.css">
+
+    <link rel="stylesheet" href="css/graphic.css">
+
+    <link rel="icon" href="img/icon.png">
+
+</head>
+<body onload="bringData();">
+<div>
+    <div id="meniu" >
+        <ul id="navbar-ul">
+            <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="adminPage.html" class="active">Administration</a></li>
+            <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+
+            <li class="dropdown">
+                <a href="market.html" class="dropbtn">Market</a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="xyCheck('x', 'music.html');">Music</a>
+                    <a href="instruments.html">Music Gear</a>
+                </div>
+            </li>
+        </ul>
+        </div>
+        <div class="item-navbar-min" style="background-image:url(images/second.jpg); background-attachment: fixed;">
+            <div class="container"> 
+                <div class="row"> 
+                    <div class="col-md-6 col-sm-6">
+                    </div>
+                    <div class="col-md-5 col-sm-5">
+                            <!-- <h1 class="text-center">Discover and Buy Music</h1> -->
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <div id="mareleDiv">
+    <section class="section-gray">
+        <div class="container">
+            <br>
+            <h3 class="module-title font-alt">Top 5 number of loggins per day:</h3>
+            <svg class="graph" aria-labelledby="title" role="img">
+                <title id="title">Graphic for loggins</title>
+                <g class="grid x-grid" id="xGrid">
+                    <line x1="90" x2="90" y1="5" y2="371"></line>
+                </g>
+                <g class="grid y-grid" id="yGrid">
+                    <line x1="90" x2="705" y1="370" y2="370"></line>
+                </g>
+                <g id="Xs" class="labels x-labels">
+                    
+                </g>
+                <g id="Ys" class="labels y-labels">
+
+                </g>
+                <g id="points" class="data" data-setname="Our first data set">
+
+                </g>
+            </svg>
+        </div>
+
+    </section>
+
+    <section style="background-color: #fafafa;">
+        <div class="container">
+            <br>
+            <h3 class="module-title font-alt">Top 5 Music Sellers:</h3>
+            
+            <div id="top5" class="row multi-columns-row">
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                    Nothing to show
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-gray">
+        <div class="container">
+            <br>
+            <h3 class="module-title font-alt">Set users permissions for music</h3>
+            
+            <div id="perm" class="row multi-columns-row">
+                <div class="col-sm-8 col-md-8 col-lg-8"><form action="#" onsubmit="changePerm(); return false;">
+                    <label for="userPerm"><span class="requiredStar">Type item ID</span></label><br>
+                    <input type="number" min="0" class=" creative-title form-text" required placeholder="ex: 75" id="userPerm" name="userPerm">
+                    <label for="permEditOwner" class="requiredStar">Change Owner Permissions</label>
+                    <select id="permEditOwner" name="permEditOwner">
+                        <option value="0">Nothing</option>
+                        <option value="1">Read</option>
+                        <option value="2">Read/Write</option>
+                    </select><br>
+
+                    <label for="permEditUsers" class="requiredStar">Change Users Permissions</label>
+                    <select id="permEditUsers" name="permEditUsers">
+                        <option value="0">Nothing</option>
+                        <option value="1">Read</option>
+                        <option value="2">Read/Write</option>
+                    </select><br>
+
+                    <label for="permEditGuest" class="requiredStar">Change Guests Permissions</label>
+                    <select id="permEditGuest" name="permEditGuest">
+                        <option value="0">Nothing</option>
+                        <option value="1">Read</option>
+                        <option value="2">Read/Write</option>
+                    </select><br>
+                    <div class="text-align-center spacing-down"> 
+                        <input id="btn-perm" class="sell-button" name="commit" type="submit" value="Change Permissions">
+                    </div>
+                    <div id="rezPerm" class="text-align-center spacing-down"> 
+                        ...
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section style="background-color: #fafafa;">
+        <div class="container">
+            <br>
+            <h3 class="module-title font-alt">Set users permissions for gear</h3>
+            
+            <div id="permGear" class="row multi-columns-row">
+                <div class="col-sm-8 col-md-8 col-lg-8"><form action="#" onsubmit="changePermGear(); return false;">
+                    <label ><span class="requiredStar">Type item ID</span></label><br>
+                    <input type="number" min="0" class=" creative-title form-text" required placeholder="ex: 75" id="userPermGear" name="userPerm">
+                    <label for="permEditOwnerG" class="requiredStar">Change Owner Permissions</label>
+                    <select id="permEditOwnerG" name="permEditOwnerG">
+                        <option value="0">Nothing</option>
+                        <option value="1">Read</option>
+                        <option value="2">Read/Write</option>
+                    </select><br>
+
+                    <label for="permEditUsersG" class="requiredStar">Change Users Permissions</label>
+                    <select id="permEditUsersG" name="permEditUsersG">
+                        <option value="0">Nothing</option>
+                        <option value="1">Read</option>
+                        <option value="2">Read/Write</option>
+                    </select><br>
+
+                    <label for="permEditGuestG" class="requiredStar">Change Guests Permissions</label>
+                    <select id="permEditGuestG" name="permEditGuestG">
+                        <option value="0">Nothing</option>
+                        <option value="1">Read</option>
+                        <option value="2">Read/Write</option>
+                    </select><br>
+                    <div class="text-align-center spacing-down"> 
+                        <input id="btn-perm-gear" class="sell-button" name="commit" type="submit" value="Change Permissions">
+                    </div>
+                    <div id="rezPermGear" class="text-align-center spacing-down"> 
+                        ...
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-gray">
+        <div class="container">
+            <br>
+            <h3 class="module-title font-alt text-align-center">Heatmap</h3>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 text-align-center">
+                    <input onclick='location.href = "heatmap.html"' class="sell-button" name="commit" type="button" value="Go to Heatmap page">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #fafafa;">
+        <div class="container">
+            <br>
+            <h3 class="module-title font-alt text-align-center">Probabilitate</h3>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4 text-align-center" id="prob">
+                    
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </section>
+    </div>
+    <!-- FOOTER ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <footer>
+        <div class="foot-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 text-left">
+                        <table style="margin-left: 10px;">
+                            <tbody><tr>
+                                <td>
+                                    <a href="banner.html" class="m-20 f-w-bold">Banner Exchange</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="licensee-terms-and-conditions.html" class="m-20 f-w-bold">Terms for Music Buyers</a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <div class="col-md-3 text-left">
+                        <table>
+                            <tbody><tr>
+                                <td>
+                                    <a href="about-us.html" class="m-20 f-w-bold">About Us</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 11px 0;">
+                                    <a href="https://www.facebook.com/Muzicity.co.uk" target="_blank" class="m-20" style="text-decoration: none;">
+                                        <img title="Facebook Page" src="img/Facebook_button.jpg" alt="Facebook_button" class="img-responsive img-center">
+                                    </a>
+    
+                                    <a href="https://twitter.com/Muzicity1" target="_blank" class="m-20" style="text-decoration: none;">
+                                        <img title="Twitter Page" src="img/twitter_button.jpg" alt="twitter_button" class="img-responsive img-center">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="contact.html" class="m-20 f-w-bold">Contact Us</a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

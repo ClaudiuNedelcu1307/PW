@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Leeeeeeeeeroy JENKINS!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <link rel="stylesheet" href="css/menuu.css">
+    <link rel="stylesheet" href="css/music-style.css">
+    <link rel="stylesheet" href="css/slide-nav.css">
+    <script src="js/menu.js"></script>
+    <script src="js/slide-nav.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/detail_gear.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/gear.js"></script>
+    <script src="js/heatHarta.js"></script>
+    <script src="js/xy.js"></script>
+    <link rel="stylesheet" href="css/style-home.css">
+    <link rel="stylesheet" href="css/modal-style.css">
+    <link rel="stylesheet" href="css/market-modal.css">
+    <link rel="stylesheet" href="css/item_detail.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/upload.css">
+
+    <link rel="icon" href="img/icon.png">
+
+</head>
+<body onload="login_check(); get_all_gear();">
+    <div>
+    <div id="meniu" >
+        <ul id="navbar-ul">
+            <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="adminPage.html">Administration</a></li>
+            <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+            <li id="register_li" style="float:right; display:none;"><a onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Register</a></li>
+            <li id="login_li" style="float:right; display:none;"><a onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><i class="fa fa-user"></i> Log-in</a></li>
+            
+            <li id="logout_li" style="float:right; display:none;"><a onclick="logout(); get_all_gear(); document.getElementById('sell-btn-gear').style.display = 'none';" style="width:auto;">Logout</a></li>
+            <li id="user_li" class="width-auto" style="float:right; display:none;"><a id="username_li" onclick="goProfile()" style="width:auto;"> </a></li>
+
+            <li class="dropdown active">
+                <a href="market.html" class="dropbtn">Market</a>
+                <div class="dropdown-content ">
+                    <a href="#" onclick="xyCheck('x', 'music.html');">Music</a>
+                    <a href="#">Music Gear</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="item-navbar" style="background-image:url(images/fourth.jpg); background-attachment: fixed;">
+        <div class="container"> 
+            <div class="row"> 
+                <div class="col-md-6 col-sm-6">
+                </div>
+                <div class="col-md-5 col-sm-5">
+                    <h1 class="text-center">Buying & Selling Music Gear</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <section id="sellGear" style="background-color: #fafafa;">
+        <div class="container benefits-container">
+            <div class="row">
+                <div class="col-sm-4 text-align-center">
+                    <img src="images/gear2.jpg" class="img-responsive" width="400" height="400" alt="gear2">
+                </div>
+                <div class="col-sm-4 text-align-center">
+                    <h3 class="sellGear-title">Sell Your Music Gear</h3>
+                    <hr class="hr-style">
+                    <p>List as many items as you want for free and only pay a 3.5% fee when a listing sells, one of the lowest around.<br></p>
+                    <div class="text-align-center"> 
+                        <button id="sell-btn-gear" onclick="document.getElementById('modalMarketAct').style.display='block'" class="sell-button" style="display: none;">Sell your music gear Now</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <img src="images/gear.jpg" class="img-responsive" width="400" height="400" alt="gear1">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="detail_search">
+    <div id="quick" class="">
+            <div id="buyGear" class="col-md-12 text-align-center quick-title">
+                <h3 class="sellGear-title">Buy Music Gear</h3>
+                <hr class="hr-style">
+            </div>
+			<div class="col-md-12 text-align-center quick-title">
+				<h3>Quick Search</h3>
+			</div>
+                <div class="col-md-3 text-align-center" >
+                    <div class="quick_search" style="background-image:url(buttons/guitars-button.jpg)" onclick="search_for('Guitars')">
+                        Guitars<div class="overlay"></div></div>
+                </div>
+                <div class="col-md-3 text-align-center">
+                    <div class="quick_search" style="background-image:url(buttons/pedal-button.jpg)" onclick="search_for('Effects/Pedals')">Effects/Pedals<div class="overlay"></div></div>
+                </div>
+                <div class="col-md-3 text-align-center">
+                    <div class="quick_search" style="background-image:url(buttons/drum-button.jpg)" onclick="search_for('Drums')">Drums<div class="overlay"></div></div>
+                </div>
+                <div class="col-md-3 text-align-center">
+                    <div class="quick_search" style="background-image:url(buttons/flute-button.jpg)" onclick="search_for('Flute')">Flute<div class="overlay"></div></div>
+                </div>
+
+                <div class="col-md-3 text-align-center" >
+                    <div class="quick_search"  style="background-image:url(buttons/amp-button.jpg)" onclick="search_for('Amps')">
+                        Amps<div class="overlay"></div></div>
+                </div>
+                <div class="col-md-3 text-align-center">
+                    <div class="quick_search"  style="background-image:url(buttons/accordion-button.jpg)" onclick="search_for('Accordions')">Accordions<div class="overlay"></div></div>
+                </div>
+                <div class="col-md-3 text-align-center">
+                    <div class="quick_search"  style="background-image:url(buttons/trumpet-button.jpg)" onclick="search_for('Trumpets')">Trumpets<div class="overlay"></div></div>
+                </div>
+                <div class="col-md-3 text-align-center">
+                    <div class="quick_search"  style="background-image:url(buttons/head-button.jpg)" onclick="search_for('HeadPhones')">HeadPhones<div class="overlay"></div></div>
+                </div>
+
+        </div>
+    
+        <div class="search-container">
+            <form>
+                <input id="search-bar" class="search-input" type="text" placeholder="Search..." name="search" onkeyup="search_for(this.value)">
+            </form>
+        </div>
+        <hr class="hr-style">
+        <div id="search_rez" class="container benefits-container text-align-center">
+            Nothing to show
+            <div class="row">
+                <div class="col-md-3 ">
+                    
+                </div>     
+            </div>
+        </div>
+
+    </section>
+
+<div id="modalMarketAct" class="modalMarket">
+    <div class="modalMarket-content animateMk">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('modalMarketAct').style.display='none'" class="closeMarket" title="Close Modal">&times;</span>
+        </div>
+        <section class="section-gray twelve columns centered">
+            <div class="spacing"><form action="#" onsubmit="document.getElementById('confModalAct').style.display='block'; return false;">
+                <h1 class="main_headline">Add your item details</h1>
+                <span class="required-helper">* Required Field</span>
+            
+                <fieldset id="single_album_name_list_item">
+                    <label for="single_album_name" class="requiredStar">Title</label><br>
+                    <input class=" creative-title form-text" placeholder="Item Title" required id="single_album_name" name="single[album_name]" size="30" type="text" value="">
+                </fieldset>
+            
+                <fieldset class="check">
+                    <ul>
+                        <li id="single_parental_advisory_list_item" class="checkbox">
+                            <label for="single_parental_advisory">
+                            <input id="single_parental_advisory" type="checkbox">
+                            EXPLICIT ! This track has explicit lyrics.
+                            </label>
+                        </li>
+                    </ul>
+            
+        
+                </fieldset>
+            
+                <fieldset class="primary_artists">
+                    <label for="primary_artists"><span class="requiredStar">Main Artists</span></label><br>
+                    <span>Separate them by ";"(semicolon) character</span><br>
+                    <input class=" creative-title form-text" placeholder="Album artits" required id="primary_artists" name="primary_artists" size="30" type="text" value="">
+                </fieldset>
+            
+                <fieldset id="single_language_code_legacy_support_list_item">
+                    <label for="single_language" class="requiredStar">Main Language</label><br>
+                    <select id="single_language" name="single_language">
+                        <option value="Afrikaans">Afrikaans</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Bulgarian">Bulgarian</option>
+                        <option value="Cantonese">Cantonese</option>
+                        <option value="Catalan">Catalan</option>
+                        <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+                        <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+                        <option value="Croatian">Croatian</option>
+                        <option value="Czech">Czech</option>
+                        <option value="Danish">Danish</option>
+                        <option value="Dutch">Dutch</option>
+                        <option value="English" selected="selected">English</option>
+                        <option value="Estonian">Estonian</option>
+                        <option value="Finnish">Finnish</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                        <option value="Greek">Greek</option>
+                        <option value="Haitian/Haitian Creole">Haitian/Haitian Creole</option>
+                        <option value="Hebrew">Hebrew</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Hungarian">Hungarian</option>
+                        <option value="Icelandic">Icelandic</option>
+                        <option value="Indonesian">Indonesian</option>
+                        <option value="Irish">Irish</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Kazakh">Kazakh</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Lao">Lao</option>
+                        <option value="Latin">Latin</option>
+                        <option value="Latvian">Latvian</option>
+                        <option value="Lithuanian">Lithuanian</option>
+                        <option value="Malay">Malay</option>
+                        <option value="Norwegian">Norwegian</option>
+                        <option value="Panjabi/Punjabi">Panjabi/Punjabi</option>
+                        <option value="Persian">Persian</option>
+                        <option value="Polish">Polish</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="Romanian">Romanian</option>
+                        <option value="Russian">Russian</option>
+                        <option value="Sanskrit">Sanskrit</option>
+                        <option value="Slovak">Slovak</option>
+                        <option value="Slovenian">Slovenian</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Swedish">Swedish</option>
+                        <option value="Tagalog">Tagalog</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Turkish">Turkish</option>
+                        <option value="Ukrainian">Ukrainian</option>
+                        <option value="Urdu">Urdu</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                        <option value="Zulu">Zulu</option>
+                    </select>
+                </fieldset>
+
+                <fieldset id="money">
+                    <label for="price" class="requiredStar">Price</label><br>
+                    <input required placeholder="0" class="form-text" id="price" name="price" size="10" type="number" min="0">
+                </fieldset>
+
+                <fieldset id="currency_set">
+                    <label for="currency" class="requiredStar">Currency</label><br>
+                    <select required id="currency" name="currency"><option value="">-</option>
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                        <option value="LEI">LEI</option>
+                    </select>
+                </fieldset>
+            
+                <fieldset id="single_primary_genre_id_list_item">
+                    <label for="single_primary_genre" class="requiredStar">Type:</label><br>
+                    <select required id="single_primary_genre" name="single_primary_genre"><option value="">-</option>
+                        <option value="Accordions">Accordions</option>
+                        <option value="Amps">Amps</option>
+                        <option value="Drums">Drums</option>
+                        <option value="Effects/Pedals">Effects/Pedals</option>
+                        <option value="Flute">Flute</option>
+                        <option value="Guitars">Guitars</option>
+                        <option value="Headphone">Headphone</option>
+                        <option value="Trumpets">Trumpets</option>
+                    </select>
+                </fieldset>
+                <hr class="hr-color">          
+                <fieldset id="single_sale_date_list_item">
+                    <label for="release_date">Release Date</label><br>
+                    <input class=" creative-title form-text" id="release_date" name="realase" size="30" type="date">
+                </fieldset>
+                
+                <fieldset class="rec_location">
+                    <label for="rec_location"><span>More Details</span></label><br>
+                    <textarea class="creative-title form-text" placeholder="Write something about your product ..." id="rec_location" name="rec_location"></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <label><span>Previously released?</span></label><br>
+                    <ul>
+                        <li id="single_previously_released_false_list_item" class="radio">
+                            <label for="single_previously_released_false">
+                                <input checked="checked" class="not-previously-released prev-released" id="single_previously_released_false" name="single[previously_released]" type="radio" value="false">
+                                No
+                            </label>
+                        </li>
+                    
+                        <li id="single_previously_released_true_list_item" class="radio">
+                            <label for="single_previously_released_true">
+                                <input class="previously-released prev-released" id="single_previously_released_true" name="single[previously_released]" type="radio" value="true">
+                                Yes
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <fieldset>
+                    <label for="fileToUpload1" class="requiredStar"><span>Upload some images with your item</span></label><br>
+                    <input required type="file" name="fileToUpload" id="fileToUpload1">
+                    <input type="file" name="fileToUpload" id="fileToUpload2">
+                    <input type="file" name="fileToUpload" id="fileToUpload3">
+
+                </fieldset>
+
+                <div class="text-align-center spacing-down"> 
+                    <input  class="sell-button " name="commit" type="submit" value="Post your item">
+                </div>
+                
+            </form></div>
+        </section>
+        <!-- MODAL ------------------------------------------------------------- -->
+        <div id="confModalAct" class="modalMarket">
+            <div class="modalMarket-conf animateMk">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('confModalAct').style.display='none'" class="closeMarket" title="Close Modal">&times;</span>
+                </div>
+                
+                <div id="LoadingAct" class="containerMarketModal text-align-center">
+                    <hr>
+                    POSTING ...
+                </div>
+                <div id="post-btn" class="containerMarketModal text-align-center">
+                    <label>Are you sure you want to post this item?</label>
+                    <div id="sell_div" class="success"><span>SUCCESS !!!</span></div>
+                    <input id="sell_button" class="sell-button text-align-center" onclick="postItem()" type="button" value="Yes">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- LOGIN ############################### -->
+<div id="id01" class="modalLogin">
+        <div class="modalLogin-content animate">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="img/avatar.png" alt="Avatar" class="avatarLogin">
+          </div>
+      
+          <div class="containerLogin">
+            <label class="requiredStar" for="uname"><b>Username</b></label>
+            <input id="uname" type="text" placeholder="Enter Username" name="uname" required><br>
+      
+            <label class="requiredStar" for="upass"><b>Password</b></label>
+            <input id="upass" type="password" placeholder="Enter Password" name="psw" required><br>
+              
+            <button id="confirmLogin" onclick="submit_login()">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+          <div id="StatusLogin"></div>
+          <div class="containerLogin" style="background-color:#f1f1f1">
+            <button id="cancelLogin" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+      </div>
+      </div>
+      
+  <!-- ////////////////////////////////////////////// -->
+  <!-- REGISTER ////////////////////////////////////////////// -->
+  
+      <div id="id02" class="modalRegister">
+              <div class="modalReg-content animate">
+                  <div class="imgcontainer">
+                      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                      <img src="img/avatar2.jpg" alt="Avatar" class="avatarLogin">
+                  </div>
+                  <form class="containerReg" action="#" onsubmit="submit_register(); return false;">
+                    <h1>Register</h1>
+                    <p>Please fill in this form to create an account.</p>
+                    <hr>
+                    <label for="email_reg"><b>Email</b></label>
+                    <input id="email_reg" type="email" placeholder="Enter Email" name="email" required>
+  
+                    <label for="uname_reg"><b>Username</b></label>
+                    <input id="uname_reg" type="text" placeholder="Enter a username" name="username_reg" maxlength="50" required>
+              
+                    <label for="upass_reg"><b>Password</b></label>
+                    <input id="upass_reg" type="password" placeholder="Enter Password" name="psw" required>
+              
+                    <label for="urepass_reg"><b>Repeat Password</b></label>
+                    <input id="urepass_reg" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+  
+              
+                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+              
+                    <div class="clearfix">
+                      <button id="cancelReg" type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                      <button id="confirmReg" type="submit" class="signupbtn float-right">Sign Up</button>
+                    </div>
+                  </form>
+              </div>
+      </div>
+
+<!-- FOOTER ///////////////////////////////////////////////////////////////////////////////////////////////// -->
+<footer>
+        <div class="foot-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 text-left">
+                        <table style="margin-left: 10px;">
+                            <tbody><tr>
+                                <td>
+                                    <a href="banner.html" class="m-20 f-w-bold">Banner Exchange</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="licensee-terms-and-conditions.html" class="m-20 f-w-bold">Terms for Music Buyers</a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                    <div class="col-md-3 text-left">
+                        <table>
+                            <tbody><tr>
+                                <td>
+                                    <a href="about-us.html" class="m-20 f-w-bold">About Us</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 11px 0;">
+                                    <a href="https://www.facebook.com/Muzicity.co.uk" target="_blank" class="m-20" style="text-decoration: none;">
+                                        <img title="Facebook Page" src="img/Facebook_button.jpg" alt="Facebook_button" class="img-responsive img-center">
+                                    </a>
+    
+                                    <a href="https://twitter.com/Muzicity1" target="_blank" class="m-20" style="text-decoration: none;">
+                                        <img title="Twitter Page" src="img/twitter_button.jpg" alt="twitter_button" class="img-responsive img-center">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="contact.html" class="m-20 f-w-bold">Contact Us</a>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

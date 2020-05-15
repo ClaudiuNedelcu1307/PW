@@ -1,0 +1,275 @@
+  
+
+        <section class="section-gray twelve columns centered">
+            <div class="container spacing">
+                <div class="col-md-8">
+                    <img class="img-responsive img-center img-resize img-detail" src="" id="photo_1">
+                    <div class="margin-boxes">
+                        <h2 class="titlu-box special-caracteristici">Item and Seller Details:</h2>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <ul class="lista-tabelara">
+                                    <li>Title: <span id="title"></span></li>
+                                    <li>Main Artists: <span  id="artists"></span></li>
+                                    <li>Language: <span  id="lang"></span></li>
+                                    <li>Price: <span  id="price"></span></li>
+                                    <li>Currency: <span  id="curr"></span></li>
+                                    <li>Genre: <span  id="genre"></span></li>
+                                    <li>Realese Date: <span  id="date"></span></li>
+                                    <li>Item ID: <span  id="idi"></span></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6"> 
+                                <ul class="lista-tabelara mobile-list"> 
+                                    <li>Username: <span><a href="#" id="username_item"> </a></span></li>
+                                    <li>First Name: <span id="first"></span></li>
+                                     <li>Last Name: <span id="last"></span></li> 
+                                     <li>Telephone: <span  id="tel"></span></li>
+                                      <li>Email: <span id="email"></span></li> 
+                                      <li>City: <span id="city"></span></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="container spacing">
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-8"> 
+                                <ul class="lista-tabelara mobile-list"> 
+                                    <li>Preview: <span id="more_details">2019 (finalizata)</span></li>
+                                </ul>
+                            </div>
+
+                    </div>
+                </div>
+            </div>
+     </section>
+    <section>
+        <div id="Modify-Item" class="container benefits-container">
+            <h2>Actions:</h2>
+            <a id="edit-btn" class="btn btn-primary spacing" onclick="document.getElementById('modalMarketEdit').style.display='block';">Edit</a>
+            <a id="del-btn" class="btn btn-primary btn-delete spacing" onclick="document.getElementById('id03').style.display='block'">Delete</a>
+            <a id="back-btn" class="btn btn-primary" onclick="location.reload()">Back</a>
+        </div>
+    </section>
+
+
+    <!-- MODAL ------------------------------------------------------------- -->
+    <div id="id03" class="modalLogin">
+       <div class="modalLogin-content animate">
+           <div class="imgcontainer">
+               <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
+           </div>
+           
+           <div id="post-btn" class="containerLogin text-align-center">
+               <label>Are you sure you want to delete this item?</label>
+               <input id="del_button" class="sell-button text-align-center btn-delete" onclick="deleteBtn()" type="button" value="Yes">
+           </div>
+           
+       </div>
+   </div>
+
+   <div id="modalMarketEdit" class="modalMarket">
+    <div class="modalMarket-content animateMk">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('modalMarketEdit').style.display='none'" class="closeMarket" title="Close Modal">&times;</span>
+        </div>
+        <section class="section-gray twelve columns centered">
+            <div class="spacing"><form action="#" onsubmit="document.getElementById('confModalEdit').style.display='block'; return false;">
+                <h1 class="main_headline">Edit your item details</h1>
+                <span class="required-helper">* Required Field</span>
+            
+                <fieldset id="edit_single_album_name_list_item">
+                    <label for="edit_single_album_name" class="requiredStar">Title</label><br>
+                    <input class=" creative-title form-text" placeholder="Item Title" required="true" id="edit_single_album_name" type="text" value="">
+                </fieldset>
+        
+            
+                <fieldset class="primary_artists">
+                    <label for="edit_primary_artists"><span class="requiredStar">Main Artists</span></label><br>
+                    <span>Separate them by ";"(semicolon) character</span><br>
+                    <input class=" creative-title form-text" placeholder="Album artits" required="true" id="edit_primary_artists" size="30" type="text" value="">
+                </fieldset>
+            
+                <fieldset id="edit_single_language_code_legacy_support_list_item">
+                    <label for="edit_single_language" class="requiredStar">Main Language</label><br>
+                    <select id="edit_single_language" name="single_language">
+                        <option value="Afrikaans">Afrikaans</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="Bengali">Bengali</option>
+                        <option value="Bulgarian">Bulgarian</option>
+                        <option value="Cantonese">Cantonese</option>
+                        <option value="Catalan">Catalan</option>
+                        <option value="Chinese (Simplified)">Chinese (Simplified)</option>
+                        <option value="Chinese (Traditional)">Chinese (Traditional)</option>
+                        <option value="Croatian">Croatian</option>
+                        <option value="Czech">Czech</option>
+                        <option value="Danish">Danish</option>
+                        <option value="Dutch">Dutch</option>
+                        <option value="English" selected="selected">English</option>
+                        <option value="Estonian">Estonian</option>
+                        <option value="Finnish">Finnish</option>
+                        <option value="French">French</option>
+                        <option value="German">German</option>
+                        <option value="Greek">Greek</option>
+                        <option value="Haitian/Haitian Creole">Haitian/Haitian Creole</option>
+                        <option value="Hebrew">Hebrew</option>
+                        <option value="Hindi">Hindi</option>
+                        <option value="Hungarian">Hungarian</option>
+                        <option value="Icelandic">Icelandic</option>
+                        <option value="Indonesian">Indonesian</option>
+                        <option value="Irish">Irish</option>
+                        <option value="Italian">Italian</option>
+                        <option value="Japanese">Japanese</option>
+                        <option value="Kazakh">Kazakh</option>
+                        <option value="Korean">Korean</option>
+                        <option value="Lao">Lao</option>
+                        <option value="Latin">Latin</option>
+                        <option value="Latvian">Latvian</option>
+                        <option value="Lithuanian">Lithuanian</option>
+                        <option value="Malay">Malay</option>
+                        <option value="Norwegian">Norwegian</option>
+                        <option value="Panjabi/Punjabi">Panjabi/Punjabi</option>
+                        <option value="Persian">Persian</option>
+                        <option value="Polish">Polish</option>
+                        <option value="Portuguese">Portuguese</option>
+                        <option value="Romanian">Romanian</option>
+                        <option value="Russian">Russian</option>
+                        <option value="Sanskrit">Sanskrit</option>
+                        <option value="Slovak">Slovak</option>
+                        <option value="Slovenian">Slovenian</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Swedish">Swedish</option>
+                        <option value="Tagalog">Tagalog</option>
+                        <option value="Tamil">Tamil</option>
+                        <option value="Telugu">Telugu</option>
+                        <option value="Thai">Thai</option>
+                        <option value="Turkish">Turkish</option>
+                        <option value="Ukrainian">Ukrainian</option>
+                        <option value="Urdu">Urdu</option>
+                        <option value="Vietnamese">Vietnamese</option>
+                        <option value="Zulu">Zulu</option>
+                    </select>
+                </fieldset>
+
+                <fieldset id="edit_money1">
+                    <label for="edit_money" class="requiredStar">Price</label><br>
+                    <input required="true" placeholder="0" class="form-text" id="edit_money" name="money" size="10" type="number" min="0">
+                </fieldset>
+
+                <fieldset id="edit_currency_set">
+                    <label for="edit_currency" class="requiredStar">Currency</label><br>
+                    <select required="true" id="edit_currency" name="currency"><option value=""></option>
+                        <option value="EUR">EUR</option>
+                        <option value="USD">USD</option>
+                        <option value="LEI">LEI</option>
+                    </select>
+                </fieldset>
+            
+                <fieldset id="edit_single_primary_genre_id_list_item">
+                    <label for="edit_single_primary_genre" class="requiredStar">Primary Genre</label><br>
+                    <select id="edit_single_primary_genre" name="single_primary_genre"><option value=""></option>
+                        <option value="Blues">Blues</option>
+                        <option value="Disco">Disco</option>
+                        <option value="Dreamy">Dreamy</option>
+                        <option value="Folk">Folk</option>
+                        <option value="Happy">Happy</option>
+                        <option value="Hip Hop/Rap">Hip Hop/Rap</option>
+                        <option value="Hopeful">Hopeful</option>
+                        <option value="Love">Love</option>                        
+                        <option value="Peacefull">Peacefull</option>
+                        <option value="Pop">Pop</option>
+                        <option value="Reggae">Reggae</option>
+                        <option value="Rock">Rock</option>
+                        <option value="Sad">Sad</option>
+                        <option value="Spoken Word">Spoken Word</option>
+                    </select>
+                </fieldset>
+
+                <fieldset class="rec_location">
+                    <label for="edit_rec_location"><span>Lyrics:</span></label><br>
+                    <textarea class="creative-title form-text" required placeholder="Write something about your product ..." id="edit_rec_location" name="rec_location" size="30" tc_required="true" type="text" value=""></textarea>
+                </fieldset>
+                <hr class="hr-color">
+            
+                <fieldset id="edit_single_sale_date_list_item">
+                    <label for="edit_realase">Release Date</label><br>
+                    <input class=" creative-title form-text" id="edit_release_date" name="realase" size="30" type="date">
+                </fieldset>
+                
+                <fieldset id="edit_single_id">
+                    <label for="edit_id-item">Item ID:</label><br>
+                    <input class=" creative-title form-text" placeholder="#" id="edit_id-item" name="id-item" size="30" type="text" disabled>
+                </fieldset>
+
+                <fieldset>
+                    <label for="edit_single_prev_released"><span>Previously released?</span></label><br>
+                    <ul>
+                        <li id="edit_single_previously_released_false_list_item" class="radio">
+                            <label for="edit_single_previously_released_false">
+                                <input checked="checked" class="not-previously-released prev-released" id="edit_single_previously_released_false" li_class="radio" name="single[previously_released]" new_form="true" type="radio" value="false">
+                                No
+                            </label>
+                        </li>
+                    
+                        <li id="edit_single_previously_released_true_list_item" class="radio">
+                            <label for="edit_single_previously_released_true">
+                                <input class="previously-released prev-released" id="edit_single_previously_released_true" li_class="radio" name="single[previously_released]" new_form="true" type="radio" value="true">
+                                Yes
+                            </label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <div class="text-align-center spacing-down"> 
+                    <input class="sell-button " li_class="form-actions" name="commit" type="submit" value="Post your item">
+                </div>
+                
+            </form></div>
+        </section>
+        <!-- MODAL ------------------------------------------------------------- -->
+        <div id="confModalEdit" class="modalMarket">
+            <div class="modalMarket-conf animateMk">
+                <div class="imgcontainer">
+                    <span onclick="document.getElementById('confModalEdit').style.display='none'" class="closeMarket" title="Close Modal">&times;</span>
+                </div>
+                
+                <div id="Loading" class="containerMarketModal text-align-center">
+                        <hr>
+                    POSTING ...
+                </div>
+
+                <div id="edit-btn" class="containerMarketModal text-align-center">
+                    <label>Are you sure you want to edit this post?</label>
+                    <div id="edit_div" class="success"><span>SUCCESS !!!</span></div>
+                    <input id="edit_button" class="sell-button text-align-center" onclick="editItem()" type="button" value="Yes">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+         
+   <script>
+        var modalD = document.getElementById('id03');
+        var modalT = document.getElementById('confModalEdit');
+        var modalY = document.getElementById('modalMarketEdit');
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalD) {
+                modalD.style.display = "none";
+            }
+            if (event.target == modalT) {
+                modalT.style.display = "none";
+            }
+            if (event.target == modalY) {
+                modalY.style.display = "none";
+            }
+        }
+    </script>
